@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
         - name: doctor-appointment-system-git
-          image: image-registry.openshift-image-registry.svc:5000/kkrishnavamshi518-dev/doctor-appointment-system-git:latest
+          image: image-registry.openshift-image-registry.svc:5000/kkrishnavamshi518-dev/doctor-appointment-system@sha256:ffefbb22a12e6a7838e17183cec8aafe5568ee0fc04dbd3cfff2f25fd6f1fd6e
           imagePullPolicy: Always
           env:
             - name: DB_HOST
@@ -16,11 +16,11 @@ spec:
             - name: DB_PORT
               value: "3306"
             - name: DB_NAME
-              value: doctor_db
+              value: sampledb
             - name: DB_USERNAME
               value: userIXX
             - name: DB_PASSWORD
-              value: 6uDXRa0xObiMk2aj
+              value: WTMh72eW6EuvjU1v
             - name: SPRING_PROFILES_ACTIVE
               value: prod
           ports:
