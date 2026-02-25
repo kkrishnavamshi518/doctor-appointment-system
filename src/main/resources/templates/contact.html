@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | Medico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+      <div th:replace="~{fragments/home_navbar :: navbar}"></div>
+	  <section class="contact-box text-white text-center d-flex align-items-center">
+	    <div class="container">
+	      <h1 class="fw-bold">Contact Medico</h1>
+	      <p class="mt-3 fs-5">We’re here to help you. Get in touch with us anytime.</p>
+	    </div>
+	  </section>
+	  <section class="py-5 bg-light">
+	    <div class="container">
+	      <div class="row g-4">
+	        <div class="col-md-4">
+	          <div class="contact-card p-4 h-100">
+	            <h5 class="fw-bold mb-4 text-primary">Reach Us</h5>
+	            <div class="d-flex gap-3 mb-3 align-items-center">
+	              <div class="contact-icon">
+	                <i class="bi bi-geo-alt-fill"></i>
+	              </div>
+	              <div>
+	                <p class="fw-semibold mb-0">Address</p>
+	                <small class="text-muted">Hyderabad, India</small>
+	              </div>
+	            </div>
+	            <div class="d-flex gap-3 mb-3 align-items-center">
+	              <div class="contact-icon">
+	                <i class="bi bi-envelope-fill"></i>
+	              </div>
+	              <div>
+	                <p class="fw-semibold mb-0">Email</p>
+	                <small class="text-muted">support@medico.com</small>
+	              </div>
+	            </div>
+	            <div class="d-flex gap-3 align-items-center">
+	              <div class="contact-icon">
+	                <i class="bi bi-telephone-fill"></i>
+	              </div>
+	              <div>
+	                <p class="fw-semibold mb-0">Phone</p>
+	                <small class="text-muted">+91 98765 43210</small>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <!-- CONTACT FORM -->
+	        <div class="col-md-8">
+	          <div class="contact-card p-4">
+	            <h5 class="fw-bold mb-4 text-primary">Send Us a Message</h5>
+	            <form>
+	              <div class="row g-3">
+	                <div class="col-md-6">
+	                  <input type="text" class="form-control" placeholder="Your Name" required>
+	                </div>
+	                <div class="col-md-6">
+	                  <input type="email" class="form-control" placeholder="Your Email" required>
+	                </div>
+	                <div class="col-12">
+	                  <input type="text" class="form-control" placeholder="Subject">
+	                </div>
+	                <div class="col-12">
+	                  <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+	                </div>
+	                <div class="col-12 text-end">
+	                  <button type="submit" class="btn btn-primary">Send Message</button>
+	                </div>
+	              </div>
+	            </form>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </section>
+	  <!-- FOOTER -->
+	  <footer class="footer">
+	    <p>© 2026 Medico - Smart Healthcare Scheduling | All Rights Reserved.</p>
+	  </footer>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment Confirmed | Medico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg-light pt-5 d-flex flex-column min-vh-100">
+<div th:replace="~{fragments/patient_navbar :: patNav}"></div>
+<div class="container py-4 mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-6">
+            <div class="card shadow-sm border-0">
+                <!-- Header -->
+                <div class="card-header bg-success text-white text-center py-3">
+                    <h4 class="mb-0 fw-semibold"><i class="bi bi-check-circle-fill"></i>Appointment Confirmed</h4>
+                </div>
+                <div class="card-body p-4 text-center">
+                    <!-- Success Message -->
+                    <div class="mb-3 text-success">
+                        <i class="bi bi-check-circle display-4"></i>
+                    </div>
+                    <h5 class="fw-semibold text-success">Appointment Booked Successfully</h5>
+                    <p class="text-muted mb-3">Your appointment has been confirmed.</p>
+                    <!-- Countdown -->
+                    <div class="alert alert-info py-2">
+                        Redirecting to Booking History in
+                        <strong><span id="countdown">5</span></strong> seconds...
+                    </div>
+                    <hr>
+                    <!-- Appointment Details -->
+                    <div class="text-start">
+                        <p><strong>Doctor : </strong><span th:text="${appointment.doctorName}"></span></p>
+                        <p><strong>Specialization : </strong><span th:text="${appointment.doctorSpecialization}"></span></p>
+                        <p><strong>Email : </strong><span th:text="${appointment.doctorEmail}"></span></p>
+                        <p><strong>Date : </strong><span th:text="${appointment.date}"></span></p>
+                        <p><strong>Time : </strong><span th:text="${appointment.time}"></span></p>
+                        <p><strong>Problem : </strong><span th:text="${appointment.problem}"></span></p>
+                        <p><strong>Status : </strong><span class="badge bg-success" th:text="${appointment.status}"></span></p>
+                    </div>
+                    <hr>
+                    <!-- Buttons -->
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                        <a th:href="@{/patient/history}" class="btn btn-primary">View Booking History</a>
+                        <a th:href="@{/patient/home}" class="btn btn-outline-secondary">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ================= FOOTER ================= -->
+<footer class="bg-white border-top text-center py-3 mt-auto">
+    <small class="text-muted">© 2026 Medico - Smart Healthcare Scheduling | Patient Portal
+    </small>
+</footer>
+<script>
+    let seconds = 5;
+    const countdown = document.getElementById("countdown");
+    const timer = setInterval(function () {
+        seconds--;
+        countdown.textContent = seconds;
+        if (seconds <= 0) {
+            clearInterval(timer);
+            window.location.href = "/patient/history";
+        }
+    }, 1000);
+</script>
+</body>
+</html>
